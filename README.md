@@ -9,11 +9,14 @@
 
 Реализовал следующим способом:
 - Не увидели баннер.    
-никуда не записывается, никак не отслеживается
+записывал в бд
 - Увидели, но не кликнули <br/>
 записывал как просмотренно 
 - Увидели и кликнули     
 записывал как нажатие на баннер
+
+[Не увидели баннер (бекенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Controllers/BannerController.cs#L41-L53) <br/>
+[Увидели баннер (фронтенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml#L11-L20)
 
 [Увидели баннер (бекенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Controllers/BannerController.cs#L41-L53) <br/>
 [Увидели баннер (фронтенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml#L11-L20)
