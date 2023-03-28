@@ -16,7 +16,7 @@
 записывал как нажатие на баннер
 
 [Не увидели баннер (бекенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Controllers/BannerController.cs#L41-L53) <br/>
-[Не увидели баннер (фронтенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml#L23-L40)
+[Не увидели баннер (фронтенд)](https://github.com/egorrrmiller/NoruBanner/blob/b8df875714a5359c9baa586ec510d32d4a47fa3c/Tibuon/Views/Home/Index.cshtml#L23-L39)
 
 [Увидели баннер (бекенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Controllers/BannerController.cs#L41-L53) <br/>
 [Увидели баннер (фронтенд)](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml#L11-L20)
