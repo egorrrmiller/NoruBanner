@@ -29,7 +29,27 @@ public class BannerController : ControllerBase
         {
             BannerId = banner.BannerId,
             SeeCount = banner.SeeCount,
-            ClickCount = banner.ClickCount + 1
+            ClickCount = banner.ClickCount + 1,
+            DontSeeCount = banner.DontSeeCount
+        });
+        await _context.SaveChangesAsync();
+        return result.Entity;
+    }
+    
+    [HttpPost("dontSeeBanner")]
+    public async Task<Banner?> DontSeeBanner(BannerDto bannerDto)
+    {
+        var banner = await _context.Banners.AsNoTracking().FirstOrDefaultAsync(id => id.BannerId == bannerDto.id);
+
+        if (banner is null)
+            return null;
+
+        var result = _context.Banners.Update(new Banner
+        {
+            BannerId = banner.BannerId,
+            SeeCount = banner.SeeCount,
+            ClickCount = banner.ClickCount,
+            DontSeeCount = banner.DontSeeCount + 1
         });
         await _context.SaveChangesAsync();
         return result.Entity;
@@ -47,7 +67,8 @@ public class BannerController : ControllerBase
         {
             BannerId = banner.BannerId,
             SeeCount = banner.SeeCount + 1,
-            ClickCount = banner.ClickCount
+            ClickCount = banner.ClickCount,
+            DontSeeCount = banner.DontSeeCount
         });
         await _context.SaveChangesAsync();
         return Ok();

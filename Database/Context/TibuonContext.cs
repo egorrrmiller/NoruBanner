@@ -14,7 +14,7 @@ public class TibuonContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Banner>().HasData(Enumerable.Range(1, 50).Select(i => new Banner
+        modelBuilder.Entity<Banner>().HasData(Enumerable.Range(1, 10).Select(i => new Banner
         {
             BannerId = Guid.NewGuid()
         }));
