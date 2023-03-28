@@ -34,9 +34,8 @@ async function DontSeeBanner(guid) {
    
    const json = await response.json();
       
-     var banner = JSON.parse(JSON.stringify(json));
-      console.log(banner);
-     document.getElementById('dont_see_'+guid).innerHTML = 'Не увидели баннер: <small>' +banner.dontSeeCount+ '</small></p>';
+   var banner = JSON.parse(JSON.stringify(json));
+   document.getElementById('dont_see_'+guid).innerHTML = 'Не увидели баннер: <small>' +banner.dontSeeCount+ '</small></p>';
 }
 
 async function ClickBanner(guid) {
