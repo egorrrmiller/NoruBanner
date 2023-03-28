@@ -1,0 +1,79 @@
+@model List<Database.Models.Bunner>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/bootstrap.css"/>
+<script>
+
+ async function SeeBunner(guid) {
+    let data = {
+                                  id: guid
+                                };
+    const response = await fetch('seeBunner',
+      {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-type':'application/json; charset=UTF-8',
+        }
+      });
+}
+
+ async function ClickBunner(guid) {
+     
+     let data = {
+                              id: guid
+                            };
+     
+    const response = await fetch('clickBunner',
+          {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Content-type':'application/json; charset=UTF-8',
+            }
+          });
+    
+    console.log(response.json());
+    
+    var click = JSON.parse(response.json());
+    
+      // Выбираем элемент на странице, и меняем содержимое нужного поля
+      document.getElementById('click_count_'+guid).value = 'Количество нажатий: <small>' +click.clickCount+ '</small></p>;'
+    
+  
+    console.log(response.json());
+}
+
+</script>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var bunner in Model)
+        {
+            <div class="col">
+                <div class="card mt-4" style="min-width: 33.6rem;">
+                    @*<div class="card-header">
+                    @order.Title
+                </div>*@
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p class="card-text">Баннер: <small><button  onclick="ClickBunner('@bunner.BunnerId')">
+                                                                            <img onload="SeeBunner('@bunner.BunnerId')" src="https://img.hhcdn.ru/employer-logo/2897761.png"
+                                                                                 alt="Logo"/>
+                                                                        </button></small></p>
+                            <p id="click_count_@bunner.BunnerId" class="card-text">Количество нажатий: <small>@bunner.ClickCount</small></p>
+                            <p class="card-text">Количество просмотров: <small>@bunner.SeeCount</small></p>
+                        </blockquote>
+                        <br/>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        Id баннера: @bunner.BunnerId
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+

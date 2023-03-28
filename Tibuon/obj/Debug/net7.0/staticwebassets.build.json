@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "2X+rdg1SHOPyibcdVbiV+0VJ9rVfI44AGf/fFzcDvkg=",
+  "Source": "Tibuon",
+  "BasePath": "_content/Tibuon",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Tibuon\\wwwroot",
+      "Source": "Tibuon",
+      "ContentRoot": "C:\\Users\\matrac0vv-\\RiderProjects\\Tibuon\\Tibuon\\wwwroot\\",
+      "BasePath": "_content/Tibuon",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\matrac0vv-\\RiderProjects\\Tibuon\\Tibuon\\wwwroot\\bootstrap.css",
+      "SourceId": "Tibuon",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\matrac0vv-\\RiderProjects\\Tibuon\\Tibuon\\wwwroot\\",
+      "BasePath": "_content/Tibuon",
+      "RelativePath": "bootstrap.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap.css"
+    }
+  ]
+}
