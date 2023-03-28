@@ -6,6 +6,7 @@ namespace Tibuon.Controllers;
 public class HomeController : Controller
 {
     private readonly TibuonContext _context;
+
     // GET
     public HomeController(TibuonContext context)
     {
@@ -14,7 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var bunners = _context.Bunners.ToList();
-        return View(bunners);
+        var banners = _context.Banners.ToList();
+        return View(banners);
     }
 }

@@ -10,19 +10,13 @@ public class TibuonContext : DbContext
         Database.EnsureCreated();
     }
 
-    public DbSet<Bunner> Bunners { get; set; }
-
-    /*protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlite("Data Base = tibuon.db");
-        base.OnConfiguring(optionsBuilder);
-    }*/
+    public DbSet<Banner> Banners { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Bunner>().HasData(Enumerable.Range(1, 50).Select(i => new Bunner
+        modelBuilder.Entity<Banner>().HasData(Enumerable.Range(1, 50).Select(i => new Banner
         {
-            BunnerId = Guid.NewGuid()
+            BannerId = Guid.NewGuid()
         }));
 
         base.OnModelCreating(modelBuilder);
