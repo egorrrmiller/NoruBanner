@@ -26,7 +26,7 @@
 
 
 Результат: <br/>
-- [Веб-страница](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml)
+- [Веб-страница](https://github.com/egorrrmiller/NoruBanner/blob/master/Tibuon/Views/Home/Index.cshtml)
 - [Js код](https://github.com/egorrrmiller/NoruBanner/blob/d05e2e2e17070ef0df368705792ce68484d13b77/Tibuon/Views/Home/Index.cshtml#L8-L41)
 - [Бекенд](https://github.com/egorrrmiller/NoruBanner/tree/master/Tibuon) <br/>
 В качестве БД использовал SQLite, в качестве ORM EntityFramework Core. БД меняется одной строчкой в Program.cs
