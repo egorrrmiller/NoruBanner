@@ -1,3 +1,3 @@
 namespace Database.DTO;
 
-public record BannerDto(Guid id);
+public record BannerDto(Guid Id);
