@@ -3,7 +3,6 @@ using Database.DTO;
 using Database.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Tiburon.Controllers;
 
@@ -25,17 +24,12 @@ public class BannerController : ControllerBase
         if (banner is null)
             return null;
 
-        var result = _context.Banners.Update(new Banner
-        {
-            BannerId = banner.BannerId,
-            SeeCount = banner.SeeCount,
-            ClickCount = banner.ClickCount + 1,
-            DontSeeCount = banner.DontSeeCount
-        });
+        banner.ClickCount += 1;
+        var result = _context.Banners.Update(banner);
         await _context.SaveChangesAsync();
         return result.Entity;
     }
-    
+
     [HttpPost("dontSeeBanner")]
     public async Task<Banner?> DontSeeBanner(BannerDto bannerDto)
     {
@@ -44,13 +38,9 @@ public class BannerController : ControllerBase
         if (banner is null)
             return null;
 
-        var result = _context.Banners.Update(new Banner
-        {
-            BannerId = banner.BannerId,
-            SeeCount = banner.SeeCount,
-            ClickCount = banner.ClickCount,
-            DontSeeCount = banner.DontSeeCount + 1
-        });
+        banner.DontSeeCount = +1;
+
+        var result = _context.Banners.Update(banner);
         await _context.SaveChangesAsync();
         return result.Entity;
     }
@@ -63,13 +53,8 @@ public class BannerController : ControllerBase
         if (banner is null)
             return NotFound("Баннер не найден");
 
-        _context.Banners.Update(new Banner
-        {
-            BannerId = banner.BannerId,
-            SeeCount = banner.SeeCount + 1,
-            ClickCount = banner.ClickCount,
-            DontSeeCount = banner.DontSeeCount
-        });
+        banner.SeeCount = +1;
+        _context.Banners.Update(banner);
         await _context.SaveChangesAsync();
         return Ok();
     }
