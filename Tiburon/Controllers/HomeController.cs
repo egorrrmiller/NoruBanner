@@ -1,7 +1,7 @@
 using Database.Context;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Tibuon.Controllers;
+namespace Tiburon.Controllers;
 
 public class HomeController : Controller
 {

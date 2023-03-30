@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 
-namespace Tibuon.Controllers;
+namespace Tiburon.Controllers;
 
 [ApiController]
 public class BannerController : ControllerBase

@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tibuon", "Tibuon\Tibuon.csproj", "{E538CC12-B5F6-4649-A242-04CE2A2F8FA4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tiburon", "Tiburon\Tiburon.csproj", "{E538CC12-B5F6-4649-A242-04CE2A2F8FA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{09F86D6B-E543-4819-BB6A-57E0043D6E9E}"
 EndProject
