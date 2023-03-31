@@ -8,53 +8,38 @@
 <script>
 
 async function SeeBanner(guid) {
-   await fetch('seeBanner',
-     {
-       method: 'POST',
-       body: JSON.stringify({
-       'id': guid
-       }),
-       headers: {
-         'Content-type':'application/json; charset=UTF-8',
-       }
-     });
+   await Fetch('seeBanner', guid);
 }
+
 async function DontSeeBanner(guid) {
-   const response = await fetch('dontSeeBanner',
-     {
-       method: 'POST',
-       body: JSON.stringify({
-       'id': guid
-       }),
-       headers: {
-         'Content-type':'application/json; charset=UTF-8',
-       }
-     });
+   const response = await Fetch('dontSeeBanner', guid);
    
-   const json = await response.json();
-      
-   var banner = JSON.parse(JSON.stringify(json));
+   const json = await response.json();   
+   const banner = JSON.parse(JSON.stringify(json));
+   
    document.getElementById('dont_see_'+guid).innerHTML = 'Не увидели баннер: <small>' +banner.dontSeeCount+ '</small></p>';
 }
 
 async function ClickBanner(guid) {
-    
-   const response = await fetch('clickBanner',
-        {
-          method: 'POST',
-          body: JSON.stringify({
-          'id': guid
-          }),
-          headers: {
-           'Content-type':'application/json; charset=UTF-8',
-          }
-        });
+  const response = await Fetch('clickBanner', guid);
    
   const json = await response.json();
-   
-  var banner = JSON.parse(JSON.stringify(json));
+  const banner = JSON.parse(JSON.stringify(json));
    
   document.getElementById('click_count_'+guid).innerHTML = 'Количество нажатий: <small>'+ banner.clickCount +'</small></p>';    
+}
+
+async function Fetch(url, guid) {
+    return await fetch(url,
+                   {
+                     method: 'POST',
+                     body: JSON.stringify({
+                     'id': guid
+                     }),
+                     headers: {
+                      'Content-type':'application/json; charset=UTF-8',
+                     }
+                   });
 }
 
 </script>

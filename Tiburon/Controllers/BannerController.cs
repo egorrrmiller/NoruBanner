@@ -39,7 +39,7 @@ public class BannerController : ControllerBase
         if (banner is null)
             return null;
 
-        banner.DontSeeCount = +1;
+        banner.DontSeeCount += 1;
         var result = _context.Banners.Update(banner);
         await _context.SaveChangesAsync();
         
@@ -54,7 +54,7 @@ public class BannerController : ControllerBase
         if (banner is null)
             return NotFound("Баннер не найден");
 
-        banner.SeeCount = +1;
+        banner.SeeCount += 1;
         _context.Banners.Update(banner);
         await _context.SaveChangesAsync();
         
